@@ -7,6 +7,7 @@ const PREFIX = "$";
 const OnlyFiles = ["pliki"]; //na tym kanale można wysyłać tylko pliki
 const OnlyImages = ["screenshoty", "memowiarnia"]; //na tym kanale można wysyłać tylko zdjęcia
 const OnlyMusic = "muzykowo"; //na tym kanale mogą być same komendy do music bota
+const OnlySpam = "spam"; //na tym kanale można wszystko
 //
 
 client.on("ready", function() {
@@ -63,6 +64,11 @@ client.on("message", function(message) {
         .then(msg => msg.delete(5000))
         .catch(console.error);
      return;
+   }
+   
+   //spam
+   if (message.channel.name === OnlySpam) {
+       return;
    }
 
    //komendy
