@@ -1,0 +1,14 @@
+{
+  "name": "mybot",
+  "version": "1.0.0",
+  "description": "Bot for MLG TEAM created by Adamojlo119",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Ogieniewski",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.0"
+  }
+}
