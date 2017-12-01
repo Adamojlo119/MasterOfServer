@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const TOKEN = "Mzg1NTUzMDU0MTAwODgxNDE4.DQIRyA.lw7o1c5jpujyA4P1n1Pfvb0imlk";
 const MUSIC_PREFIX = "!";
 const PREFIX = "$";
 
@@ -78,4 +77,4 @@ client.on("message", function(message) {
 
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
