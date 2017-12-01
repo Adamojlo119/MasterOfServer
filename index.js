@@ -18,10 +18,15 @@ client.on("message", function(message) {
   var Attachment = (message.attachments).array();
   var AttachmentUrl = (Attachment.toString() === "[object Object]") ? Attachment[0].url.toLowerCase() : message.content
   if (message.author.equals(client.user)) return;
-
+   
    //kanały tekstowe
    if (!(message.channel.name === OnlyImages[0] || message.channel.name === OnlyImages[1] || message.channel.name === OnlyFiles[0] || message.channel.name === OnlyMusic)) {
 
+      //spam
+      if (message.channel.name === OnlySpam) {
+       return;
+      }
+      
      if ((Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif"))) || (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif")) || (message.content.startsWith(MUSIC_PREFIX))) {
        message.delete();
        message.reply("**Proszę używać kanałów zgodnie z ich przeznaczeniem!**")
@@ -64,11 +69,6 @@ client.on("message", function(message) {
         .then(msg => msg.delete(5000))
         .catch(console.error);
      return;
-   }
-   
-   //spam
-   if (message.channel.name === OnlySpam) {
-       return;
    }
 
    //komendy
