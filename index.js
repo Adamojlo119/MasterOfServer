@@ -34,9 +34,9 @@ client.on("message", function(message) {
    if (message.channel.name === OnlyFiles[0] && Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif"))) {
      return;
    }
-   else if ((message.channel.name === OnlyFiles[0] && !message.content.startsWith("https://") && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif")) || (message.channel.name === OnlyFiles[0] && message.content != "")) {
+   else if (message.channel.name === OnlyFiles[0] && !message.content.startsWith("https://") && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif")) || (message.channel.name === OnlyFiles[0] && message.content != "")) {
      message.delete();
-     message.reply("***Na tym kanale można wysyłać tylko róznego rodzaju pliki lub do nich linki!**")
+     message.reply("**Na tym kanale można wysyłać tylko róznego rodzaju pliki lub do nich linki!**")
         .then(msg => msg.delete(5000))
         .catch(console.error);
    }
