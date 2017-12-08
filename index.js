@@ -60,7 +60,7 @@ client.on("message", function(message) {
 
 
    //muzykowo
-   if ((message.channel.name === OnlyMusic && message.content.startsWith(MUSIC_PREFIX)) || message.client.user.id === "274543915070390282") {
+   if ((message.channel.name === OnlyMusic && message.content.startsWith(MUSIC_PREFIX)) || (message.channel.name === OnlyMusic && message.client.user.id === "274543915070390282")) {
      return;
    }
    else if (message.channel.name === OnlyMusic) {
