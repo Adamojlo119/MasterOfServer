@@ -70,7 +70,7 @@ client.on("message", function(message) {
         .catch(console.error);
      return;
    }
-
+   console.log(message.client.user.id === "274543915070390282");
    //komendy
    var args = message.content.substring(PREFIX.length).split(" ");
    if (!message.content.startsWith(PREFIX)) return;
