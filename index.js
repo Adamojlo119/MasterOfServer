@@ -27,7 +27,7 @@ client.on("message", function(message) {
        return;
       }
       
-     if ((Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif"))) || (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif")) || (message.content.startsWith(MUSIC_PREFIX))) {
+     if ((Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".jpeg") || AttachmentUrl.endsWith(".gif"))) || (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".jpeg") || AttachmentUrl.endsWith(".gif")) || (message.content.startsWith(MUSIC_PREFIX))) {
        message.delete();
        message.reply("**Proszę używać kanałów zgodnie z ich przeznaczeniem!**")
           .then(msg => msg.delete(5000))
@@ -37,10 +37,10 @@ client.on("message", function(message) {
 
    }
    //pliki
-   if (message.channel.name === OnlyFiles[0] && Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif"))) {
+   if (message.channel.name === OnlyFiles[0] && Attachment.toString() === "[object Object]" && !(AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".jpeg") || AttachmentUrl.endsWith(".gif"))) {
      return;
    }
-   else if (message.channel.name === OnlyFiles[0] && !message.content.startsWith("https://") && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif")) || (message.channel.name === OnlyFiles[0] && message.content != "")) {
+   else if (message.channel.name === OnlyFiles[0] && !message.content.startsWith("https://") && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".jpeg") || AttachmentUrl.endsWith(".gif")) || (message.channel.name === OnlyFiles[0] && message.content != "")) {
      message.delete();
      message.reply("**Na tym kanale można wysyłać tylko róznego rodzaju pliki lub do nich linki!**")
         .then(msg => msg.delete(5000))
@@ -48,10 +48,10 @@ client.on("message", function(message) {
    }
 
    //screenshoty i memowiarnia
-   if ((message.channel.name === OnlyImages[0] || message.channel.name === OnlyImages[1]) && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".gif"))) {
+   if ((message.channel.name === OnlyImages[0] || message.channel.name === OnlyImages[1]) && (AttachmentUrl.endsWith(".png") || AttachmentUrl.endsWith(".jpg") || AttachmentUrl.endsWith(".jpeg") || AttachmentUrl.endsWith(".gif"))) {
     return;
    }
-   else if ((message.channel.name === OnlyImages[0] || message.channel.name === OnlyImages[1]) && (!message.content.endsWith(".png") || !message.content.endsWith(".jpg") || !message.content.endsWith(".gif"))) {
+   else if ((message.channel.name === OnlyImages[0] || message.channel.name === OnlyImages[1]) && (!message.content.endsWith(".png") || !message.content.endsWith(".jpg") || !message.content.endsWith(".jpeg") || !message.content.endsWith(".gif"))) {
      message.delete();
      message.reply("**Na tym kanale można wysyłać tylko zdjęcia i linki ze zdjęciami!**")
         .then(msg => msg.delete(5000))
