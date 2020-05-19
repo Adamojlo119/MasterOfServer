@@ -1,2 +1,2 @@
 # MasterOfServer
-Bot for MLG TEAM created by Adamojlo119
+Bot for Discord server created by Adamojlo119
